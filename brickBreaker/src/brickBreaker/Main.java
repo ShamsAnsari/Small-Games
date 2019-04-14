@@ -1,4 +1,4 @@
-package brickBracker;
+package brickBreaker;
 
 import javax.swing.JFrame;
 

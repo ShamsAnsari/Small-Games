@@ -1,4 +1,4 @@
-package brickBracker;
+package brickBreaker;
 
 import java.awt.Color;
 import java.awt.Graphics;

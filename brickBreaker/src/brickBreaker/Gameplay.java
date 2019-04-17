@@ -16,9 +16,7 @@ import javax.swing.Timer;
 
 public class Gameplay extends JPanel implements KeyListener, ActionListener
 {
-    /**
-     * 
-     */
+
     private static final long serialVersionUID = 1L;
 
     private boolean play = false;
@@ -64,12 +62,13 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
 
     public void paint( Graphics g )
     {
+
         // Background
-        g.setColor( Color.BLACK );
+        g.setColor( Color.ORANGE );
         g.fillRect( 0, 0, 700, 600 );
 
         // Borders
-        g.setColor( Color.YELLOW );
+        g.setColor( Color.BLACK );
         g.fillRect( 0, 0, 10, 600 );
         g.fillRect( 0, 0, 700, 10 );
         g.fillRect( 690, 0, 10, 600 );
@@ -78,17 +77,21 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
         map.draw( (Graphics2D)g );
 
         // Score
-        g.setColor( Color.WHITE );
+        g.setColor( new Color( 128, 0, 0 ) );
         g.setFont( new Font( "Monospaced", Font.BOLD, 25 ) );
         g.drawString( "" + score, 650, 30 );
 
         // Paddle
-        g.setColor( Color.GREEN );
+        g.setColor( Color.PINK );
         g.fillRoundRect( playerX, PLAYER_Y, PADDLE_WIDTH, PADDLE_HEIGHT, 5, 5 );
+        g.setColor( Color.BLACK );
+        g.drawRoundRect( playerX, PLAYER_Y, PADDLE_WIDTH, PADDLE_HEIGHT, 5, 5 );
 
         // Ball
-        g.setColor( Color.YELLOW );
+        g.setColor( Color.PINK );
         g.fillOval( ballPosX, ballPosY, 20, 20 );
+        g.setColor( Color.BLACK );
+        g.drawOval( ballPosX, ballPosY, 20, 20 );
 
         if ( totalBricks < 1 )
         {
@@ -102,7 +105,10 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
             g.drawString( "" + score, 350, 325 );
             g.setColor( Color.RED );
             g.setFont( new Font( " Monospaced", Font.BOLD, 20 ) );
-            g.drawString( "Press Enter to Restart: ", 240, 350 );
+            g.drawString( "Press Enter to Restart: ", 240, 365 );
+            g.setFont( new Font( " Monospaced", Font.BOLD, 15 ) );
+            g.setColor( Color.GRAY );
+            g.drawString( "by Shams Ansari", 295, 375 );
 
         }
         if ( ballPosY > 570 )
@@ -118,6 +124,9 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
             g.setColor( Color.RED );
             g.setFont( new Font( " Monospaced", Font.BOLD, 20 ) );
             g.drawString( "Press Enter to Restart: ", 240, 350 );
+            g.setFont( new Font( " Monospaced", Font.BOLD, 15 ) );
+            g.setColor( Color.GRAY );
+            g.drawString( "by Shams Ansari", 295, 375 );
 
         }
 

@@ -3,7 +3,7 @@ package brickBreaker;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.util.Random;
+//import java.util.Random;
 
 
 public class MapGenerator
@@ -43,11 +43,11 @@ public class MapGenerator
             {
                 if ( map[row][col] > 0 )
                 {
-                    Random rand = new Random();
+//                    Random rand = new Random();
 
-                    float red = rand.nextFloat();
-                    float green = rand.nextFloat();
-                    float blue = rand.nextFloat();
+//                    float red = rand.nextFloat();
+//                    float green = rand.nextFloat();
+//                    float blue = rand.nextFloat();
 
                     // g.setColor( new Color( red, green, blue ) );
                     g.setColor( Color.WHITE );

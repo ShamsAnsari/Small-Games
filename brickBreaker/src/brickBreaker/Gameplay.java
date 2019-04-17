@@ -1,6 +1,7 @@
 package brickBreaker;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -15,6 +16,11 @@ import javax.swing.Timer;
 
 public class Gameplay extends JPanel implements KeyListener, ActionListener
 {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+
     private boolean play = false;
 
     private int score = 0;
@@ -71,6 +77,11 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
         // Bricks
         map.draw( (Graphics2D)g );
 
+        // Score
+        g.setColor( Color.WHITE );
+        g.setFont( new Font( "Monospaced", Font.BOLD, 25 ) );
+        g.drawString( "" + score, 650, 30 );
+
         // Paddle
         g.setColor( Color.GREEN );
         g.fillRoundRect( playerX, PLAYER_Y, PADDLE_WIDTH, PADDLE_HEIGHT, 5, 5 );
@@ -78,6 +89,37 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
         // Ball
         g.setColor( Color.YELLOW );
         g.fillOval( ballPosX, ballPosY, 20, 20 );
+
+        if ( totalBricks < 1 )
+        {
+            play = false;
+            ballXdir = ballYdir = 0;
+            g.setColor( Color.RED );
+            g.setFont( new Font( "Monospaced", Font.BOLD, 33 ) );
+            g.drawString( "You Won", 290, 300 );
+            g.setColor( Color.WHITE );
+            g.setFont( new Font( "Monospaced", Font.BOLD, 25 ) );
+            g.drawString( "" + score, 350, 325 );
+            g.setColor( Color.RED );
+            g.setFont( new Font( " Monospaced", Font.BOLD, 20 ) );
+            g.drawString( "Press Enter to Restart: ", 240, 350 );
+
+        }
+        if ( ballPosY > 570 )
+        {
+            play = false;
+            ballXdir = ballYdir = 0;
+            g.setColor( Color.RED );
+            g.setFont( new Font( "Monospaced", Font.BOLD, 33 ) );
+            g.drawString( "Game Over", 270, 300 );
+            g.setColor( Color.WHITE );
+            g.setFont( new Font( "Monospaced", Font.BOLD, 25 ) );
+            g.drawString( "" + score, 350, 325 );
+            g.setColor( Color.RED );
+            g.setFont( new Font( " Monospaced", Font.BOLD, 20 ) );
+            g.drawString( "Press Enter to Restart: ", 240, 350 );
+
+        }
 
         g.dispose();
 
@@ -196,6 +238,24 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
                 moveLeft();
             }
 
+        }
+
+        if ( e.getKeyCode() == KeyEvent.VK_ENTER )
+        {
+            if ( !play )
+            {
+                play = true;
+                ballPosX = 120;
+                ballPosY = 350;
+                ballXdir = -1;
+                ballYdir = -2;
+                playerX = 310;
+                score = 0;
+                totalBricks = 21;
+                map = new MapGenerator( 3, 7 );
+
+                repaint();
+            }
         }
 
     }

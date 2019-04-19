@@ -1,6 +1,5 @@
 package breakout;
 
-import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -22,13 +21,13 @@ public class SimpleAudioPlayer
     AudioInputStream audioInputStream;
 
 
-    public SimpleAudioPlayer( String filePath )
+    public SimpleAudioPlayer()
         throws UnsupportedAudioFileException,
         IOException,
         LineUnavailableException
     {
-        audioInputStream = AudioSystem
-            .getAudioInputStream( new File( filePath ).getAbsoluteFile() );
+        audioInputStream = AudioSystem.getAudioInputStream(
+            Main.class.getResource( "/sound/NeonLights.wav" ) );
         clip = AudioSystem.getClip();
         clip.open( audioInputStream );
         clip.loop( Clip.LOOP_CONTINUOUSLY );
@@ -39,12 +38,6 @@ public class SimpleAudioPlayer
     {
         clip.start();
 
-    }
-
-
-    public void stop()
-    {
-        clip.stop();
     }
 
 }

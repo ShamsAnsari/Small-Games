@@ -1,8 +1,6 @@
 package breakout;
 
 import java.io.File;
-import java.util.Scanner;
-
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
@@ -20,16 +18,16 @@ public class Main
         obj.setResizable( false );
         obj.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
         obj.add( gamePlay );
-
         obj.setVisible( true );
+        initMusic();
+    }
 
+
+    public static void initMusic()
+    {
         try
         {
-
-            File f = new File( "NeonLights.wav" );
-            String filePath = f.getAbsolutePath();
-
-            SimpleAudioPlayer audioPlayer = new SimpleAudioPlayer( filePath );
+            SimpleAudioPlayer audioPlayer = new SimpleAudioPlayer();
             audioPlayer.play();
 
             while ( true )

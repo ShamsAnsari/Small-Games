@@ -1,8 +1,10 @@
-package brickBreaker;
+package breakout;
 
+import java.io.File;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 
 public class Main
@@ -16,28 +18,24 @@ public class Main
         obj.setBounds( 356, 147, 700, 600 );
         obj.setTitle( "Breakout Ball" );
         obj.setResizable( false );
-        obj.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        obj.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
         obj.add( gamePlay );
 
         obj.setVisible( true );
-        
+
         try
         {
-            String filePath = "/Users/Shams/Documents/GitHub/Small-Games/Breakout/music/NeonLights.wav";
-            SimpleAudioPlayer audioPlayer = new SimpleAudioPlayer( filePath );
 
+            File f = new File( "NeonLights.wav" );
+            String filePath = f.getAbsolutePath();
+
+            SimpleAudioPlayer audioPlayer = new SimpleAudioPlayer( filePath );
             audioPlayer.play();
-            Scanner sc = new Scanner( System.in );
 
             while ( true )
             {
 
-                System.out.println( "4. stop" );
-                int c = sc.nextInt();
-                if ( c == 4 )
-                    break;
             }
-            sc.close();
         }
 
         catch ( Exception ex )

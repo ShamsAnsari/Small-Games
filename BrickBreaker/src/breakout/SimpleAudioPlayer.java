@@ -1,11 +1,7 @@
-package brickBreaker;
+package breakout;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -48,7 +44,7 @@ public class SimpleAudioPlayer
 
     public void stop()
     {
-        clip.start();
+        clip.stop();
     }
 
 }

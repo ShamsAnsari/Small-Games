@@ -1,4 +1,4 @@
-package brickBreaker;
+package breakout;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -60,6 +60,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
     }
 
 
+    @Override
     public void paint( Graphics g )
     {
 
@@ -105,7 +106,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
             g.drawString( "" + score, 350, 325 );
             g.setColor( Color.RED );
             g.setFont( new Font( " Monospaced", Font.BOLD, 20 ) );
-            g.drawString( "Press Enter to Restart: ", 240, 365 );
+            g.drawString( "Press Enter to Restart: ", 240, 350 );
             g.setFont( new Font( " Monospaced", Font.BOLD, 15 ) );
             g.setColor( Color.GRAY );
             g.drawString( "by Shams Ansari", 295, 375 );

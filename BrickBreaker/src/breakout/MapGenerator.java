@@ -1,4 +1,4 @@
-package brickBreaker;
+package breakout;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -46,11 +46,10 @@ public class MapGenerator
                     Random rand = new Random();
 
                     float red = rand.nextFloat() / 2;
-                    float green = rand.nextFloat() ;
-                    float blue = rand.nextFloat() ;
+                    float green = rand.nextFloat();
+                    float blue = rand.nextFloat();
 
                     g.setColor( new Color( red, green, blue ) );
-//                    g.setColor( Color.WHITE );
                     g.fillRect( col * brickWidth + 80,
                         row * brickHeight + 50,
                         brickWidth,

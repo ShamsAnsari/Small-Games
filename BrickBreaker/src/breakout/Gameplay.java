@@ -14,40 +14,64 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Gameplay.
+ *
+ * @author Shams
+ */
 public class Gameplay extends JPanel implements KeyListener, ActionListener
 {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 1L;
 
+    /** The play. */
     private boolean play = false;
 
+    /** The score. */
     private int score = 0;
 
+    /** The total bricks. */
     private int totalBricks = 21;
 
+    /** The timer. */
     private Timer timer;
 
+    /** The delay. */
     private int delay = 8;
 
+    /** The player X. */
     private int playerX = 310;
 
+    /** The player y. */
     private final int PLAYER_Y = 550;
 
+    /** The paddle width. */
     private final int PADDLE_WIDTH = 120;
 
+    /** The paddle height. */
     private final int PADDLE_HEIGHT = 10;
 
+    /** The ball pos X. */
     private int ballPosX = 120;
 
+    /** The ball pos Y. */
     private int ballPosY = 350;
 
+    /** The ball xdir. */
     private int ballXdir = -1;
 
+    /** The ball ydir. */
     private int ballYdir = -2;
 
+    /** The map. */
     private MapGenerator map;
 
 
+    /**
+     * Instantiates a new gameplay.
+     */
     public Gameplay()
     {
         map = new MapGenerator( 3, 7 );
@@ -60,6 +84,11 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
     }
 
 
+    /**
+     * Paint.
+     *
+     * @param g the g
+     */
     @Override
     public void paint( Graphics g )
     {
@@ -136,6 +165,11 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
     }
 
 
+    /**
+     * Action performed.
+     *
+     * @param e the e
+     */
     @Override
     public void actionPerformed( ActionEvent e )
     {
@@ -220,6 +254,11 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
     }
 
 
+    /**
+     * Key pressed.
+     *
+     * @param e the e
+     */
     @Override
     public void keyPressed( KeyEvent e )
     {
@@ -293,12 +332,22 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener
     }
 
 
+    /**
+     * Key typed.
+     *
+     * @param e the e
+     */
     @Override
     public void keyTyped( KeyEvent e )
     {
     }
 
 
+    /**
+     * Key released.
+     *
+     * @param e the e
+     */
     @Override
     public void keyReleased( KeyEvent e )
     {

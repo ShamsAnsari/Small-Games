@@ -8,19 +8,38 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SimpleAudioPlayer.
+ *
+ * @author Shams
+ */
 public class SimpleAudioPlayer
 {
+    
+    /** The file path. */
     static String filePath;
 
+    /** The current frame. */
     Long currentFrame;
 
+    /** The clip. */
     Clip clip;
 
+    /** The status. */
     String status;
 
+    /** The audio input stream. */
     AudioInputStream audioInputStream;
 
 
+    /**
+     * Instantiates a new simple audio player.
+     *
+     * @throws UnsupportedAudioFileException the unsupported audio file exception
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws LineUnavailableException the line unavailable exception
+     */
     public SimpleAudioPlayer()
         throws UnsupportedAudioFileException,
         IOException,
@@ -34,6 +53,9 @@ public class SimpleAudioPlayer
     }
 
 
+    /**
+     * Play.
+     */
     public void play()
     {
         clip.start();

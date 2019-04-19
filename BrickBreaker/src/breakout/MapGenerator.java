@@ -6,15 +6,29 @@ import java.awt.Graphics2D;
 import java.util.Random;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MapGenerator.
+ */
 public class MapGenerator
 {
+    
+    /** The map. */
     public int map[][];
 
+    /** The brick width. */
     public int brickWidth;
 
+    /** The brick height. */
     public int brickHeight;
 
 
+    /**
+     * Instantiates a new map generator.
+     *
+     * @param row the row
+     * @param col the col
+     */
     public MapGenerator( int row, int col )
     {
         map = new int[row][col];
@@ -34,6 +48,11 @@ public class MapGenerator
     }
 
 
+    /**
+     * Draw.
+     *
+     * @param g the g
+     */
     public void draw( Graphics2D g )
     {
 
@@ -72,6 +91,13 @@ public class MapGenerator
     }
 
 
+    /**
+     * Sets the brick value.
+     *
+     * @param value the value
+     * @param row the row
+     * @param col the col
+     */
     public void setBrickValue( int value, int row, int col )
     {
         map[row][col] = value;
